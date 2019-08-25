@@ -1,0 +1,6 @@
+*.aux
+*.log
+*.tex~
+.ipynb_checkpoints
+factory/tw_output.*
+factory/trash/*

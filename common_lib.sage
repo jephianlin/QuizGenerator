@@ -44,6 +44,40 @@ def tex_writer(out_name='tw_output.tex', sol=True, template='basic', seed=None, 
         os.system('pdflatex %s'%out_name)
         print "The pdf file has been generated."
 
+def create_combiner(out_name, files, pdf=True):
+    """Create a tex file for combining
+    PDFs in files
+    
+    Input:
+        out_name: string
+            name of the output file (including .tex)
+        files: list of string
+            filenames of the PDFs to be combined
+        pdf: boolean
+            if True, generate the pdf
+    Output:
+        No output.  Generate a tex file with filename out_name.  
+        Generate the pdf if pdf==True.
+    """
+    f = open(out_name, 'w')
+    f.write(r"""\documentclass{article}
+
+\usepackage{pdfpages}
+
+\begin{document}
+""")
+    for filename in files:
+        f.write(r"""\includepdf{%s}
+"""%filename)
+    f.write(r"""
+\end{document}""")
+    
+    f.close()
+
+    if pdf:
+        os.system('pdflatex %s'%out_name)
+        os.system('pdflatex %s'%out_name)
+            
 ### modified from minrank_aux/general_Lib.sage
 def latex_matrix(A):
     m,n=A.dimensions();
