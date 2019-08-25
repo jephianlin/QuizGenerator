@@ -1,0 +1,59 @@
+\documentclass[a4paper]{article}
+
+\input{../preamble.tex}
+
+\begin{document}
+
+%%%FOOTER: KEY, CHECKCODE, MIDDLE TEXT
+\begin{tikzpicture}[remember picture, overlay]
+
+\node[draw=none, rectangle] at ([shift={(2cm,2cm)}]current page.south west){
+\qrcode[height=2cm]{
+%%%%%KEY
+}
+};
+\node[draw=none, rectangle, above] at ([shift={(2cm,3cm)}]current page.south west) {
+%%%%%KEY
+};
+
+\draw[very thick] ([shift={(-3cm,1cm)}]current page.south east) rectangle ([shift={(-1cm,3cm)}]current page.south east);
+\node[draw=none, rectangle, above] at ([shift={(-2cm,3cm)}]current page.south east) {check code};
+\node[draw=none, rectangle, scale=2, transform shape] at ([shift={(-2cm,2cm)}]current page.south east){
+\Huge
+%%%%%CHECKCODE
+};
+
+\end{tikzpicture} 
+
+\begin{Large}
+\centerline{\CJKEN{姓名} Name : \underline{\hspace{10em}} \hfill \CJKEN{學號} Student ID \# : \underline{\hspace{10em}}}
+%%%%%HEADING
+%%% Sample heading
+% \centerline{\CJKEN{國立中山大學} \hfill NATIONAL SUN YAT-SEN UNIVERSITY}
+%\vspace{0.5cm}
+%\centerline{\textbf{\CJKEN{線性代數（一）}} \hfill \textbf{MATH 103 / GEAI 1215: Linear Algebra I}}
+%\vspace{0.5cm}
+%\centerline{\textbf{\CJKEN{第一次期中考}} \hfill October 8, 2018 \hfill \textbf{Midterm 1}}
+%\vspace{0.5cm}
+
+\vspace{1cm}
+%%%%%QUESTION
+
+\vspace{1cm}
+\noindent\textbf{Solution.}
+
+%%%%%SOLUTION
+
+
+\vfill
+\begin{center}
+\begin{obeylines}
+Indicating your answer by \textbf{underlining it} or \textbf{circling it}.
+
+Compute the \textbf{check code} and fill it into the \textbf{box on the right}.
+\end{obeylines}
+\end{center}
+
+
+\end{Large}
+\end{document}
