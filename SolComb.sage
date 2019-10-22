@@ -62,7 +62,7 @@ Suppose $\beta$ is the basis formed by the columns of ${\bf A}$.
 Find $\repr_\beta(\bb)$.
 
 \bigskip
-Check code $=$ (sum of all entries of $\bb$) mod $10$
+Check code $=$ (sum of all entries of $\repr_\beta(\bb)$) mod $10$
     """%(
         latex_matrix(A),
         latex_matrix(vec_b)
@@ -73,7 +73,7 @@ using Gaussian elimination or any method you like.  The answer is
 \[\repr_\beta(\bb)={\bf x}=\rboxed{%s}.\]
 
 \bigskip 
-Check code $=$ (sum of all entries of $\bb$) mod $10$ $= %s$.
+Check code $=$ (sum of all entries of $\repr_\beta(\bb)$) mod $10$ $= %s$.
 """%(
     latex_matrix(vec_x), 
     CHECKCODE
