@@ -23,7 +23,7 @@ def MatRep(param=(3,2), seed=None):
 
     A = random_int_matrix(dim, dim, bound=bound)
     B = random_good_matrix(dim, dim, dim, bound=bound)
-    preparser(False)
+
     QUESTION = r"""\newcommand{\bv}{{\bf v}}
 \newcommand{\rep}{\operatorname{Rep}} 
    
