@@ -36,13 +36,13 @@ def tex_writer(out_name='tw_output.tex', sol=True, template='basic', seed=None, 
     f.close()
     g.close()
     
-    print out_name + " has been generated."
+    print(out_name + " has been generated.")
     
     if pdf:
-        print "Trying to compile the tex file."
+        print("Trying to compile the tex file.")
         os.system('pdflatex %s'%out_name)
         os.system('pdflatex %s'%out_name)
-        print "The pdf file has been generated."
+        print("The pdf file has been generated.")
 
 def create_combiner(out_name, files, pdf=True):
     """Create a tex file for combining
@@ -90,6 +90,26 @@ def latex_matrix(A):
 """%A[i][n-1]
     stg += r"""\end{bmatrix}"""
     return stg
+
+def random_int_matrix(m, n, bound=5):
+    """A generator of random mxn integer matrices
+    
+    INPUT:
+    
+    - ``m``, ``n`` -- integers; dimensions of output matrix
+      
+    - ``bound`` -- integer; the absolute value  
+      of the entries of output matrix is  
+      at most bound
+      
+    OUTPUT:
+    
+    a random mxn integer matrices whose entries  
+    are at most bound
+    """
+    all_numbers = list(range(-bound, bound+1))
+    entries = [random.choice(all_numbers) for i in range(m) for j in range(n)]
+    return matrix(m, entries)
 
 def random_ref(m, n, r, bound=5, return_pivots=False):
     """A generator of 
