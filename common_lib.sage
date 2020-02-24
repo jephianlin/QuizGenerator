@@ -228,3 +228,26 @@ def betak_solver(ref, free, k):
         j = pivots[i]
         betak[j] = -sum([ref[i,jj]*betak[jj] for jj in range(j+1,n)])
     return  matrix(n,betak)
+    
+def random_int_eigs_matrix(n, bound=5):
+    """A generator of integer matrices with integer eigenvalues  
+    
+    INPUT: 
+    
+    - `n` -- integer; order of output matrix
+    
+    - `bound` -- bound for eigenvalues
+    
+    OUTPUT: 
+    
+    return a random nxn integer matrix whose  
+    eigenvalues are integers of magnitude  
+    at most bound  
+    """
+
+    all_nz_numbers = list(range(-bound, bound+1))
+    all_nz_numbers.remove(0)
+    D = diagonal_matrix([random.choice(all_nz_numbers) for i in range(n)])
+    V = random_good_matrix(n, n, n, bound=2)
+    A = V.inverse() * D * V
+    return A
