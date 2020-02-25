@@ -47,7 +47,7 @@ Check code $=$ (sum of all entries of $\rep_{\mathcal{B},\mathcal{B}}(f)$) mod $
              r', \text{ and } A\bv_%s = %s'%(dim, latex_matrix(AB[:,dim-1]))
     BinvAB = B.inverse() * AB
     repAv_stg = ', '.join([r'\rep_{\mathcal{B}}(A\bv_%s) = %s'%(j+1, latex_matrix(BinvAB[:,j])) for j in range(dim-1)]) + \
-                r', \text{ and } \rep_{\mathcal{B}}(A\bv_%s) = %s'%(dim, latex_matrix(AB[:,dim-1]))
+                r', \text{ and } \rep_{\mathcal{B}}(A\bv_%s) = %s'%(dim, latex_matrix(BinvAB[:,dim-1]))
     
     checkcode = sum(BinvAB[i,j] for i in range(dim) for j in range(dim)) % 10
     CHECKCODE = "%s"%checkcode

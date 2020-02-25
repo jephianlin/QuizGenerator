@@ -28,7 +28,7 @@ def AbsSumEigs(param=(3,5), seed=None):
 Let 
 \[A = %(A)s.\]  
 Suppose the eigenvalues of $A$ are $\lambda_1,\ldots,\lambda_%(dim)s$.  
-Find the value of $S = \sum_{i=1}^%(dim)s \lambda_i$, where $|\cdot |$ is the absolute value.
+Find the value of $S = \sum_{i=1}^%(dim)s |\lambda_i|$, where $|\cdot |$ is the absolute value.
 
 \bigskip
 Check code $=$ $S$ mod $10$
@@ -51,7 +51,7 @@ and the eigenvalues are
 Therefore, $S = \rboxed{%(AbsSum)s}$.
 
 \bigskip 
-Check code $=$ $\det(A)$ mod $10$ $= %(checkcode)s$.
+Check code $=$ $S$ mod $10$ $= %(checkcode)s$.
     """%({'p': latex(p), 
           'eigs_stg': eigs_stg, 
           'AbsSum': AbsSum, 
