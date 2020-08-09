@@ -60,7 +60,7 @@ def create_combiner(out_name, files, pdf=True):
         Generate the pdf if pdf==True.
     """
     f = open(out_name, 'w')
-    f.write(r"""\documentclass{article}
+    f.write(r"""\documentclass[a4paper]{article}
 
 \usepackage{pdfpages}
 
