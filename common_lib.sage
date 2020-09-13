@@ -174,3 +174,54 @@ def random_int_eigs_matrix(n, bound=5):
     V = random_good_matrix(n, n, n, bound=2)
     A = V.inverse() * D * V
     return A
+    
+def Prufer_code(g):
+    """return the Prufer code of tree g
+    
+    Input:
+        g: a tree
+    
+    Output:
+        the Prufer code of g in the form of list"""
+    
+    h = g.copy()
+    code = []
+    while h.order() > 2:
+        leaves = [v for v in h.vertices() if h.degree(v) == 1]
+        pick = min(leaves)
+        u_nbr = h.neighbors(pick)[0]
+        code.append(u_nbr)
+        h.delete_vertex(pick)
+
+    return code
+    
+def latex_graph_circular(g):
+    """Return the TikZ code of draing g
+    
+    Input:
+        g: a graph
+        pos: so far only "circular" is implemented
+             one may input using the format of g.get_pos()
+        label: whether to label the vertices
+        
+    Output:
+        TikZ code
+    """
+    
+    n = g.order()
+    V = g.vertices()
+    
+    code = ""
+    gap = N(360.0 / n, digits=3)
+    ang = 0
+    for i in range(n):
+        code += r"\node[label={%(ang)s:$%(name)s$}] (%(name)s) at (%(ang)s:3) {};"%{
+            'ang': ang,
+            'name': V[i]
+        } + "\n"
+        ang += gap
+        
+    for i,j in g.edges(labels=False):
+        code += r"\draw (%s) -- (%s);"%(V[i], V[j]) + "\n"
+    
+    return code

@@ -19,12 +19,13 @@ def CountIntSol(param=(5,10), seed=None):
     
     three strings: QUESTION, SOLUTION, CHECKCODE
     """
+    num_var,bound = param
     random.seed(seed)
     
     ans = 0
     while ans <= 10 or ans >= 10000: ### if the ans is too bad
-        k = random.choice(list(range(3, param[0]+1)))
-        w = random.choice(list(range(3, param[1]+1)))
+        k = random.choice(list(range(3, num_var+1)))
+        w = random.choice(list(range(3, bound+1)))
         geq = [random.choice([0,1]) for _ in range(k)]
         neq = random.choice(['=', r'\leq'])
 
