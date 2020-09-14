@@ -47,7 +47,7 @@ def RecRel(param=(5,10), seed=None):
 \[%(rel)s \text{ for }n\geq 2,\]
 \[a_0 = %(a0)s, a_1 = %(a1)s.\]
 Write your solution in the form of 
-\[a_n = c_1\cdot r_1^n + c_2\cdot r_2^n\]
+\[a_n = c_1\cdot r_1^n + c_2\cdot r_2^n.\]
 
 \bigskip
 Check code $=$ $(c_1+c_2+r_1+r_2)$ mod $10$
@@ -62,13 +62,13 @@ Check code $=$ $(c_1+c_2+r_1+r_2)$ mod $10$
     SOLUTION = r"""Solve the characteristic polynomial 
 \[%(char_eq)s\]
 and get 
-\[r_1 = %(r1)s, r_2 = %(r2)s.\]
+\[\rboxed{r_1 = %(r1)s, r_2 = %(r2)s}.\]
 
 Then solve the system of linear equations
 \[a_0 = c_1 + c_2 = %(a0)s\]
 \[a_1 = (%(r1)s) c_1 + (%(r2)s) c_2 = %(a1)s\]
 to get 
-\[c_1 = %(c1)s, c_2 = %(c2)s.\]
+\[\rboxed{c_1 = %(c1)s, c_2 = %(c2)s}.\]
 
 \bigskip 
 Check code $=$ $(c_1+c_2+r_1+r_2)$ mod $10$ $= %(checkcode)s$.

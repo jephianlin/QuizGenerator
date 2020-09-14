@@ -62,7 +62,7 @@ where
 \[%(trans)s.\]
     
 Therefore, the answer is 
-\[\binom{%(up)s + %(down)s - 1}{%(down)s} = %(ans)s.\]
+\[\binom{%(up)s + %(down)s - 1}{%(down)s} = \rboxed{%(ans)s}.\]
 
 \bigskip 
 Check code $=$ (sum of all digits of your answer) mod $10$ $= %(checkcode)s$.

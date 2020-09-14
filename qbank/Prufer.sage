@@ -42,7 +42,7 @@ Check code $=$ (sum of all digits of your answer) mod $10$
     checkcode = sum(ans) % 10
     CHECKCODE = "%s"%checkcode
     
-    SOLUTION = r"""The Pr\"ufer code is $%(compact_ans)s$.
+    SOLUTION = r"""The Pr\"ufer code is $\rboxed{%(compact_ans)s}$.
 
 \bigskip 
 Check code $=$ (sum of all digits of your answer) mod $10$ $= %(checkcode)s$.
