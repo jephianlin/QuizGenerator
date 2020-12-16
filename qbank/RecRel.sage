@@ -32,6 +32,7 @@ def RecRel(param=(5,10), seed=None):
     r_choices.remove(0)
     r_choices.remove(1)
     r1 = random.choice(r_choices)
+    r_choices.remove(r1)
     r2 = random.choice(r_choices)
     
     g_sol = r"(%s)\cdot(%s)^n + (%s)\cdot(%s)^n"%(c1,r1,c2,r2)
