@@ -30,10 +30,10 @@ def GnpSubG(param=(4,5), seed=None):
     ans = [a, b, c, d]
     code = latex_graph_circular(h)
 
-    QUESTION = r"""Let $H$ be the labeled tree on $%(h_order)s$ vertices as shown below.
+    QUESTION = r"""Let $H$ be the graph on $%(h_order)s$ vertices as shown below.
 
 \begin{center}
-\begin{tikzpicture}
+\begin{tikzpicture}[scale=0.5]
 %(code)s
 \end{tikzpicture}
 \end{center}
