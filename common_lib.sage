@@ -196,7 +196,7 @@ def Prufer_code(g):
     return code
     
 def latex_graph_circular(g):
-    """Return the TikZ code of draing g
+    """Return the TikZ code of drawing g
     
     Input:
         g: a graph
