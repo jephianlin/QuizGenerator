@@ -39,7 +39,7 @@ def GnpSubG(param=(4,5), seed=None):
 \end{center}
 
 Let $X$ be a random variable whose value is the number of induced subgraphs in the random graph model $G(n,p)$ that is isomorphic to $H$.  
-Find the $a,b,c,d$ so that 
+Find $a,b,c,d$ so that 
 
 \[\mathbb{E}(X) = a \binom{n}{b}p^c(1-p)^d.\]
 
@@ -53,7 +53,7 @@ Check code $=$ ($a + b + c + d$) mod $10$
     CHECKCODE = "%s"%checkcode
     
     SOLUTION = r"""There are $%(aut_order)s$ automorphisms on $H$, 
-so there are $%(h_order)s! / %(aut_order)s = %(num_orbits)s$ ways to draw unlabeled $H$ on $%(h_order)s$ labeled vertices.  
+so there are $%(h_order)s! / %(aut_order)s = %(num_orbits)s$ ways to draw an unlabeled $H$ on $%(h_order)s$ labeled vertices.  
 
 There are $\binom{n}{%(h_order)s}$ ways to pick $%(h_order)s$ vertices.  
 On this set of vertices, the probability of getting an $H$ is $%(num_orbits)s\times p^{%(h_size)s}(1-p)^{%(hb_size)s}$  
