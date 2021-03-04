@@ -34,6 +34,10 @@ def tex_writer(info, out_name='tw_output.tex', sol=True, template='basic', seed=
     for line in f:
         for filler in all_filler:
             if line == "%%%%%{}\n".format(filler):
+                ### make sure there is no line change in \qrcode{...}
+                if line == "%%%%%KEY\n":
+                    ind = g.tell()
+                    g.seek(ind - 1)
                 g.write(info[filler])
                 break
         else:
