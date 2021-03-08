@@ -2,16 +2,20 @@
 import random
 
 ### modified from minrank_aux/general_Lib.sage
-def latex_matrix(A):
-    m,n=A.dimensions();
+def latex_matrix(A, env=True):
+    try:
+        m,n = A.dimensions()
+    except AttributeError:
+        m,n=len(A), len(A[0])
     stg = r"""\begin{bmatrix}
-"""
+""" if env else ''
     for i in range(m):
         for j in range(n-1):
             stg += r""" %s &"""%A[i][j]
         stg += r""" %s \\ 
 """%A[i][n-1]
-    stg += r"""\end{bmatrix}"""
+    if env:
+        stg += r"""\end{bmatrix}"""
     return stg
 
 def random_int_matrix(m, n, bound=5):
