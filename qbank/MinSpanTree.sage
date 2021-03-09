@@ -70,8 +70,8 @@ Check code $=$ (weight of your spanning tree) mod $10$
   
     SOLUTION = r"""Apply one of the minimum spanning tree algorithms, e.g., Kruskal's algorithm or Prim's algorithm.  
 The tree using the following edges  
-\[%(treeedges)s\]
-is a minimum spanning tree, whose weight is %(ans)s.  
+\[\rboxed{%(treeedges)s}\]
+is a minimum spanning tree, whose weight is $\rboxed{%(ans)s}$.  
 
 \bigskip 
 Check code $=$ (weight of your spanning tree) mod $10$ $= %(checkcode)s$.

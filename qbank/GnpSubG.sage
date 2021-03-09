@@ -60,7 +60,7 @@ On this set of vertices, the probability of getting an $H$ is $%(num_orbits)s\ti
 since there are $%(h_size)s$ edges and $%(hb_size)s$ nonedges in $H$.
 
 Therefore, 
-\[\mathbb{E}(X) = %(num_orbits)s \binom{n}{%(h_order)s}p^{%(h_size)s}(1-p)^{%(hb_size)s}\]
+\[\rboxed{\mathbb{E}(X) = %(num_orbits)s \binom{n}{%(h_order)s}p^{%(h_size)s}(1-p)^{%(hb_size)s}}\]
 with $a = %(num_orbits)s$, $b = %(h_order)s$, $c = %(h_size)s$, and $d = %(hb_size)s$.
 
 \bigskip 
