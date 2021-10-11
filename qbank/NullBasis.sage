@@ -38,7 +38,7 @@ the other free variables as $0$.
 Check code $=$ (sum of all entries of $\bm{\beta}_k$) mod $10$
 """%(latex_matrix(A), 
            latex_matrix(x_var), 
-           latex_matrix(zero_matrix(n,1)), 
+           latex_matrix(zero_matrix(m,1)), 
            k
           )
     
